@@ -8,8 +8,7 @@ da café do Brasil.
 
 1. Coletar e organizar dados
 2. Realizar o pré-processamento dos dados
-3. Desenvolver um modelo de RNA para predição do GMD
-4. Definir categorias de desempenho produtivo com base nos valores de GMD estimados
+3. Desenvolver um modelo de RNA para predição do preço do café
 5. Avaliar o desempenho do modelo utilizando métricas estatísticas
 
 ## Origem dos dados
