@@ -76,7 +76,7 @@ pip install -r requirements.txt
 | Climate data collection & processing | ✅ Complete |
 | Market data collection | ✅ Complete |
 | Dataset merge | ✅ Complete |
-| LSTM training | ⏳ Pending |
+| LSTM training | ✅ Complete` |
 | Evaluation & results | ⏳ Pending |
 
 ---
