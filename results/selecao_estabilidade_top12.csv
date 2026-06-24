@@ -1,0 +1,16 @@
+feature,freq_top12
+ret_cafe,1.0
+sma_10,1.0
+vol_5,1.0
+umidade_pct_mean_Manhuacu,1.0
+ret_cambio,1.0
+vol_21,1.0
+sin_doy,1.0
+temp_ar_C_mean_Patrocinio,0.8
+precip_mm_sum_Manhuacu,0.8
+umidade_pct_mean_Machado,0.8
+temp_min_C_min_Patrocinio,0.6
+cos_doy,0.6
+temp_ar_C_mean_Manhuacu,0.6
+temp_ar_C_mean_Machado,0.4
+radiacao_kJm2_sum_Manhuacu,0.4
