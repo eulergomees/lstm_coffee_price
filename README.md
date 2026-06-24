@@ -87,6 +87,14 @@ pip install -r requirements.txt
 
 Computer Engineering — IFMG Campus Bambuí
 
+**Antonio Ambrosio**
+
+Computer Engineering — IFMG Campus Bambuí
+
+**Dr. Marcos Roberto**
+
+Ph.D. in Computer Science — IFMG Campus Bambuí
+
 ---
 
 ## License
