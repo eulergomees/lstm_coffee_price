@@ -53,7 +53,8 @@ Unlike most financial forecasting approaches that rely solely on market indicato
 - **Period:** December 2018 – December 2025 (1,763 daily observations)
 - **Frequency:** Daily (business days — aligned with exchange calendar)
 - **Target:** log-return `r_t = ln(P_t / P_{t-1})` — stationary (confirmed by ADF), avoiding the out-of-`[0,1]` extrapolation that a level-fitted MinMaxScaler causes under a chronological split
-- **Climate representation:** Opção B — each city contributes its own set of features (wide format), allowing the model to learn region-specific weights
+- **Climate representation:** Opção B (each city contributes its own features, wide format) is compared against Opção C (a single production-weighted average per variable, weights from CONAB/IBGE mesoregional shares)
+- **Robustness:** each LSTM configuration is trained with 5 random seeds per fold and evaluated as a seed-ensemble; seed dispersion is reported
 - **Missing values:** none in the merged dataset; climate is forward-filled on non-trading days
 - **Validation:** walk-forward with an **expanding** train window (5 folds, from 50% of the data), `LOOKBACK=45`, `HORIZON=1`, and a **45-day embargo** between train and test to purge leakage
 - **Normalization:** `StandardScaler` fitted **per fold on the train core only** (no leakage)
@@ -74,11 +75,15 @@ pip install -r requirements.txt
 
 ## Results (summary)
 
+Cada LSTM é avaliada como *ensemble* de 5 sementes por fold (robustez à inicialização).
 Nenhum modelo bate o random walk de forma significativa (Diebold–Mariano) — resultado
 esperado e honesto em log-retorno diário de commodity. A LSTM só-mercado é significativamente
-pior que o random walk; **adicionar variáveis climáticas brutas** reduz o RMSE (0.02358 →
-0.02350), empata com o random walk e é a **única** configuração com acurácia direcional > 0.5
-(0.534). O clima defasado agregado não ajudou. Detalhes em [`results/resumo.md`](results/resumo.md).
+pior que o random walk; **adicionar variáveis climáticas** reduz o RMSE (0.02356 → 0.02345) e
+recupera o empate com o random walk. **Granularidade regional (Opção B vs C):** o clima **por
+cidade** (0.02345) supera o clima **agregado ponderado por produção** (0.02354), indicando que
+a resolução regional carrega sinal útil. Ressalva de robustez: o espalhamento entre
+configurações (~0.0001) é da mesma ordem do ruído entre sementes (~0.0002), então o ganho do
+clima deve ser lido com cautela. Detalhes em [`results/resumo.md`](results/resumo.md).
 
 ## Status
 
