@@ -1,0 +1,55 @@
+\begin{thebibliography}{}
+
+\bibitem[Bollerslev 1986]{bollerslev1986generalized}
+Bollerslev, T. (1986).
+\newblock Generalized autoregressive conditional heteroskedasticity.
+\newblock {\em Journal of Econometrics}, 31(3):307--327.
+
+\bibitem[Box and Jenkins 1976]{box1976time}
+Box, G. E.~P. and Jenkins, G.~M. (1976).
+\newblock {\em Time Series Analysis: Forecasting and Control}.
+\newblock Holden-Day.
+
+\bibitem[Breiman 2001]{breiman2001random}
+Breiman, L. (2001).
+\newblock Random forests.
+\newblock {\em Machine Learning}, 45(1):5--32.
+
+\bibitem[{CONAB} 2025]{conab2025cafe}
+{CONAB} (2025).
+\newblock Acompanhamento da safra brasileira de café.
+\newblock Companhia Nacional de Abastecimento.
+\newblock Disponível em: https://www.conab.gov.br/info-agro/safras/cafe.
+
+\bibitem[Diebold and Mariano 1995]{diebold1995comparing}
+Diebold, F.~X. and Mariano, R.~S. (1995).
+\newblock Comparing predictive accuracy.
+\newblock {\em Journal of Business \& Economic Statistics}, 13(3):253--263.
+
+\bibitem[Fama 1970]{fama1970efficient}
+Fama, E.~F. (1970).
+\newblock Efficient capital markets: A review of theory and empirical work.
+\newblock {\em The Journal of Finance}, 25(2):383--417.
+
+\bibitem[Hochreiter and Schmidhuber 1997]{hochreiter1997lstm}
+Hochreiter, S. and Schmidhuber, J. (1997).
+\newblock Long short-term memory.
+\newblock {\em Neural Computation}, 9(8):1735--1780.
+
+\bibitem[Hyndman and Koehler 2006]{hyndman2006another}
+Hyndman, R.~J. and Koehler, A.~B. (2006).
+\newblock Another look at measures of forecast accuracy.
+\newblock {\em International Journal of Forecasting}, 22(4):679--688.
+
+\bibitem[{INMET} 2025]{inmet2025bdmep}
+{INMET} (2025).
+\newblock Banco de dados meteorológicos (bdmep).
+\newblock Instituto Nacional de Meteorologia.
+\newblock Disponível em: https://bdmep.inmet.gov.br.
+
+\bibitem[Kingma and Ba 2015]{kingma2015adam}
+Kingma, D.~P. and Ba, J. (2015).
+\newblock Adam: A method for stochastic optimization.
+\newblock In {\em International Conference on Learning Representations (ICLR)}.
+
+\end{thebibliography}
