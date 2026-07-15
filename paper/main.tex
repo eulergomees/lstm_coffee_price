@@ -53,30 +53,36 @@ e Variáveis Climáticas Regionais de Minas Gerais}
 
 \section{Introdução}
 
+
 O Brasil é o maior produtor e exportador mundial de café, e Minas Gerais responde
-pela maior parte da produção nacional de café arábica~\cite{conab2025cafe}. A volatilidade do preço da
-commodity afeta diretamente produtores, cooperativas e exportadores, de modo que
-previsões confiáveis podem apoiar decisões ao longo de toda a cadeia. Diferentemente
-da maioria das abordagens de previsão financeira, que se apoiam apenas em indicadores
-de mercado, eventos climáticos --- geadas, secas e extremos de temperatura --- estão
-entre os mais fortes determinantes da oferta e, portanto, do preço do café.
+pela maior parte da produção nacional de café arábica \cite{CONAB2025}. A volatilidade do preço da
+commodity afeta diretamente produtores, cooperativas, exportadores e investidores, de modo que
+previsões confiáveis podem apoiar decisões ao longo de toda a cadeia produtiva. Além de fatores econômicos,
+eventos climáticos extremos, como geadas, secas e ondas de calor, influenciam significativamente a produtividade das lavouras e, 
+consequentemente, a formação dos preços no mercado futuro.
 
-Este trabalho investiga se a incorporação de variáveis climáticas regionais melhora a
-previsão do retorno diário dos futuros de café arábica (contrato KC=F, negociado na
-ICE) por meio de redes \emph{Long Short-Term Memory} (LSTM). As contribuições são:
-(i) a construção de um conjunto de dados que alinha o preço do KC=F, o câmbio BRL/USD
-e observações diárias de quatro estações automáticas do INMET nas regiões
-cafeeiras de Minas Gerais; (ii) um protocolo de avaliação temporal rigoroso, com
-controle explícito de vazamento e teste de significância; e (iii) uma análise honesta
-da contribuição do clima, incluindo uma comparação entre representar o clima
-\emph{por cidade} (granularidade regional) ou como um \emph{agregado ponderado pela
-produção}.
+Diferentemente da maioria das abordagens de previsão financeira, que se apoiam apenas em indicadores de mercado,
+este trabalho investiga a utilização de variáveis climáticas regionais como fonte complementar de informação. 
+Embora modelos baseados em aprendizado profundo, como redes \emph{Long Short-Term Memory} (LSTM), tenham sido amplamente aplicados
+à previsão de séries temporais financeiras, ainda há poucas investigações sobre o impacto da granularidade espacial das informações
+climáticas na previsão dos retornos diários do café arábica.
 
-Antecipamos o principal achado: em log-retorno diário, nenhum modelo (LSTM, ARIMA ou
-GARCH) supera o random walk de forma estatisticamente significativa, o que é esperado
-em um mercado próximo à eficiência. Ainda assim, a adição de clima reduz marginalmente
-o erro e melhora o acerto direcional, e a granularidade por cidade se mostra
-preferível à agregação ponderada por produção.
+Este trabalho investiga se a incorporação de variáveis climáticas regionais melhora a 
+previsão do retorno diário dos contratos futuros de café arábica (KC=F), negociados na ICE,
+por meio de redes \emph{Long Short-Term Memory} (LSTM). As contribuições são: (i) a construção de um conjunto
+de dados que alinha o preço do KC=F, o câmbio BRL/USD e observações diárias de quatro estações automáticas 
+do INMET nas principais regiões cafeeiras de Minas Gerais; (ii) um protocolo de avaliação temporal rigoroso,
+com controle explícito de vazamento de dados, validação walk-forward e teste de significância; e (iii) uma análise da
+contribuição das variáveis climáticas, incluindo uma comparação entre sua representação \emph{por cidade} (granularidade regional) e 
+uma representação \emph{agregado ponderado pela produção}.
+
+Antecipamos o principal achado: em log-retorno diário, nenhum modelo (LSTM, ARIMA ou 
+GARCH) supera o Random Walk de forma estatisticamente significativa, resultado compatível 
+com a elevada eficiência do mercado nesse horizonte temporal. Ainda assim, a inclusão das variáveis
+climáticas reduz marginalmente o erro de previsão e a representação por cidade apresenta desempenho
+superior à agregação ponderada, indicando que a preservação da granularidade regional mantém informações 
+úteis para a modelagem preditiva.
+
 
 \section{Materiais}
 
