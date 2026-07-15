@@ -283,6 +283,34 @@ próximas do random walk; apenas a Opção B ultrapassa o acaso na direção.}
 \label{fig:comparativo}
 \end{figure}
 
+\section{Disponibilidade do Código e Reprodutibilidade}
+
+Todo o material deste trabalho é público e está disponível em
+\url{https://github.com/eulergomees/lstm_coffee_price}, sob licença MIT. O repositório
+foi organizado para reprodução ponta a ponta:
+
+\begin{itemize}
+  \item \textbf{Coleta e preparação} (\texttt{support\_notebooks/}): processamento dos
+  dados horários do INMET para diários por estação, consolidação climática das quatro
+  cidades e construção do conjunto de mercado (KC=F e câmbio), gerando o
+  \texttt{dataset\_final.csv}.
+  \item \textbf{Análise exploratória} (\texttt{eda\_dataset.ipynb}): todas as figuras da
+  EDA e a tabela descritiva (contagem de geadas por estação, intensidade de
+  \emph{forward-fill}, estatísticas de mercado e clima).
+  \item \textbf{Modelagem} (\texttt{lstm\_coffee\_price.ipynb}) e \textbf{baselines,
+  ablação e seleção} (\texttt{baselines\_e\_selecao.ipynb}): o protocolo walk-forward, a
+  LSTM, os baselines (random walk, ARIMA, GARCH), a ablação de clima (Opções B e C), o
+  \emph{ensemble} de sementes e o teste de Diebold--Mariano.
+  \item \textbf{Artefatos} (\texttt{data/}, \texttt{results/}, \texttt{figures/}): dados
+  brutos e processados, tabelas de resultados (\texttt{.csv}) e todas as figuras em alta
+  resolução, incluindo as reproduzidas neste artigo.
+\end{itemize}
+
+O ambiente é descrito em \texttt{requirements.txt}. Todas as sementes aleatórias são
+fixadas e os \emph{folds}, o \emph{lookback}, o embargo e a normalização por fold são
+determinísticos, de modo que as tabelas e figuras aqui reportadas são reproduzíveis a
+partir da execução dos \emph{notebooks}.
+
 \section{Conclusão}
 
 Apresentamos um estudo rigoroso e reprodutível de previsão do retorno diário do café
@@ -297,9 +325,7 @@ mais longos (onde efeitos climáticos defasados podem ser mais visíveis) e a av
 métricas econômicas (simulação de estratégia direcional).
 
 \section*{Agradecimentos}
-
-Ao IFMG -- Campus Bambuí pelo apoio. Aos provedores dos dados públicos INMET e Yahoo
-Finance.
+Aos provedores dos dados públicos INMET e Yahoo Finance.
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}
